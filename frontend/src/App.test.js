@@ -3,9 +3,9 @@ import App from './App';
 
 test('renders navigation links', () => {
   render(<App />);
-  const homeLink = screen.getByText(/home/i);
-  const greetingLink = screen.getByText(/greeting/i);
-  const aboutLink = screen.getByText(/about/i);
+  const homeLink = screen.getByRole('link', { name: /home/i });
+  const greetingLink = screen.getByRole('link', { name: /greeting/i });
+  const aboutLink = screen.getByRole('link', { name: /about/i });
   expect(homeLink).toBeInTheDocument();
   expect(greetingLink).toBeInTheDocument();
   expect(aboutLink).toBeInTheDocument();
