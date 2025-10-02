@@ -8,7 +8,8 @@ async function fetchGreeting() {
 setLoading(true);
 setError('');
 try {
-const res = await axios.get('http://localhost:5000/api/greeting');
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const res = await axios.get(`${API_BASE_URL}/api/greeting`);
 setMessage(res.data.message);
 } catch (err) {
 setError('Error fetching greeting.');
